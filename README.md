@@ -22,7 +22,7 @@
 
     ```
     gcloud init
-    gcloud deploy
+    gcloud app deploy
     ```
 
 
