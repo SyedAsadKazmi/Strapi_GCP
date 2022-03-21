@@ -7,5 +7,18 @@ module.exports = [
     'strapi::body',
     'strapi::favicon',
     'strapi::public',
-    'strapi::security',
+    {
+        name: 'strapi::security',
+        config: {
+            contentSecurityPolicy: {
+                useDefaults: true,
+                directives: {
+                    'connect-src': ["'self'", 'https:'],
+                    'img-src': ["'self'", 'data:', 'blob:', '*'],
+                    'media-src': ["'self'", 'data:', 'blob:', '*'],
+                    upgradeInsecureRequests: null,
+                },
+            },
+        },
+    },
 ];
